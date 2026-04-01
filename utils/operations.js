@@ -3,7 +3,7 @@
     return numbers.reduce((sum, num) => sum + num, 0);
   }
     export function subtract(numbers) {
-      return numbers.reduce((sub,num) => sub - num, numbers[0]);
+      return numbers.slice(1).reduce((sub, num) => sub - num, numbers[0]);
     }
 
     export function multiply(numbers) {
@@ -11,5 +11,8 @@
     }
 
     export function divide(numbers) {
-      return numbers.reduce((quotient, num) => quotient / num, numbers[0]);
-    }
+      return numbers.slice(1).reduce((quotient, num) => {
+    if (num === 0) return NaN;
+    return quotient / num;
+  }, numbers[0]);
+}
