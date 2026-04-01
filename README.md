@@ -39,7 +39,7 @@ npm -v
 
 To run a Node.js file:
 ```bash
-node filename.js
+node calculator.js
 ```
 
 ### 3. What Is npm?
